@@ -1,24 +1,10 @@
-import { createStore, applyMiddleware, compose, combineReducers } from 'redux';
-import thunkMiddleware from 'redux-thunk';
 import counterReducer from 'reduxjs/reducers/counterReducer';
+import {combineReducers, createStore} from 'redux';
 
 const rootReducer = combineReducers({
     counter: counterReducer
 });
 
-const InitialState = {};
-const { NODE_ENV } = process.env;
-const enhancers = compose(
-  typeof window !== 'undefined' && NODE_ENV !== 'production'
-    ? // eslint-disable-next-line no-underscore-dangle
-      window.window.__REDUX_DEVTOOLS_EXTENSION__ &&
-        // eslint-disable-next-line no-underscore-dangle
-        window.window.__REDUX_DEVTOOLS_EXTENSION__()
-    : (f) => f,
-);
+const store = createStore(rootReducer);
 
-const createStoreWithMiddleware = applyMiddleware(thunkMiddleware)(createStore);
-
-export function initializeStore(initialState = InitialState) {
-  return createStoreWithMiddleware(rootReducer, initialState, enhancers);
-}
+export default store;

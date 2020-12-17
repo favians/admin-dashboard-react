@@ -1,11 +1,16 @@
 import {DECREMENT_COUNTER, INCREMENT_COUNTER} from 'reduxjs/actions/counterActions';
 
-const counterReducer = (state = {value: 0}, action) => {
+// State Types
+const initialState = {
+    count: 0,
+};
+
+const counterReducer = (state = initialState, action) => {
     switch (action.type) {
         case INCREMENT_COUNTER:
-            return {...state, value: state.value + 1};
+            return {...state, count: state.count + 1};
         case DECREMENT_COUNTER:
-            return {...state, value: state.value - 1};
+            return {...state, count: state.count - 1};
         default:
             return {...state};
     }
