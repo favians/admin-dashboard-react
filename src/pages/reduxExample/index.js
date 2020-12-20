@@ -14,8 +14,6 @@ function ReduxExample(props) {
   )
 }
 
-
-
 const mapStateToProps = state => ({
   count: state.counter.count,
 });
