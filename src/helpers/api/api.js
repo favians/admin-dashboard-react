@@ -1,5 +1,4 @@
 import axios from 'axios';
-import handleError from 'helpers/handleError';
 
 const httpRequestMethod = {
   GET : 'GET',
