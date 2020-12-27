@@ -22,8 +22,7 @@ class MyApp extends App {
         return (
           <React.Fragment>
             <Head>
-              <title>React Starter</title>
-              <link rel="icon" href="/favicon.ico" />
+              <title>Boiler React Starter</title>
             </Head>
             <Provider store={store}>
                 <Component {...pageProps}/>
