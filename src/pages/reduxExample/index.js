@@ -12,8 +12,8 @@ function ReduxExample(props) {
         {count}
       </h1>
       <form>
-        <button type="button" onClick={() => (decrementCounterFromRedux())}>Increment</button>
-        <button type="button" onClick={() => (incrementCounterFromRedux())}>Decrement</button>
+        <button type="button" onClick={() => (incrementCounterFromRedux())}>Increment</button>
+        <button type="button" onClick={() => (decrementCounterFromRedux())}>Decrement</button>
       </form>
       <h1>try to open your console, and you will see all the REDUX that has been set before.</h1>
     </div>
