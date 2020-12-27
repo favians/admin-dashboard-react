@@ -1,9 +1,9 @@
-import React,{ memo } from 'react'
+import React, { memo } from 'react';
 import PropTypes from 'prop-types';
-import Head from 'next/head'
+import Head from 'next/head';
 
-const SagaLul = (props)=> {
-  const {title, color} = props; 
+const SagaLul = (props) => {
+  const { title, color } = props;
   return (
     <>
       <Head>
@@ -13,20 +13,20 @@ const SagaLul = (props)=> {
       <h1>{color}</h1>
       <h3>{` ${process.env.REACT_APP_NAME}`}</h3>
     </>
-  )
-}
+  );
+};
 
 SagaLul.propTypes = {
   title: PropTypes.string.isRequired,
   color: PropTypes.oneOf([
-    "yellow",
-    "cyan",
-    "black"
-  ])
+    'yellow',
+    'cyan',
+    'black',
+  ]),
 };
 
 SagaLul.defaultProps = {
-  color: "yellow",
+  color: 'yellow',
 };
 
-export default memo(SagaLul)
+export default memo(SagaLul);

@@ -1,9 +1,9 @@
-import React,{ memo } from 'react'
+import React, { memo } from 'react';
 import PropTypes from 'prop-types';
-import Head from 'next/head'
+import Head from 'next/head';
 
-const Kelpo = (props)=> {
-  const {title, color} = props; 
+const Kelpo = (props) => {
+  const { title, color } = props;
   return (
     <>
       <Head>
@@ -13,20 +13,20 @@ const Kelpo = (props)=> {
       <h1>{color}</h1>
       <h3>{` ${process.env.REACT_APP_NAME}`}</h3>
     </>
-  )
-}
+  );
+};
 
 Kelpo.propTypes = {
   title: PropTypes.string.isRequired,
   color: PropTypes.oneOf([
-    "red",
-    "blue",
-    "green"
-  ])
+    'red',
+    'blue',
+    'green',
+  ]),
 };
 
 Kelpo.defaultProps = {
-  color: "red",
+  color: 'red',
 };
 
-export default memo(Kelpo)
+export default memo(Kelpo);

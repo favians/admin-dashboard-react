@@ -4,8 +4,8 @@ import { combineReducers, createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
 
 const rootReducer = combineReducers({
-    counter: counterReducer,
-    request: requestReducer
+  counter: counterReducer,
+  request: requestReducer,
 });
 
 const store = createStore(rootReducer, applyMiddleware(thunk));

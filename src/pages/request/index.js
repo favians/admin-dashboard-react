@@ -1,22 +1,27 @@
-import React, { useEffect, useState } from 'react'
-import styles from 'resources/styles/Home.module.css'
+import React, { useEffect } from 'react';
+import styles from 'resources/styles/Home.module.css';
 import { req } from 'reduxjs/actions/requestActions';
-import {connect} from 'react-redux';
+import { connect } from 'react-redux';
 
 function request(props) {
+  const { loginStatus, imagesData, DoRequest } = props;
+
   useEffect(async () => {
-    props.DoRequest()
+    DoRequest();
   }, []);
 
-   return (
+  return (
     <div className={styles.container}>
-        {props.imagesData.map((value, index) => (
-          <img key={index} src={value.avatar} alt="Italian Trulli"/>
+      {imagesData.map((value) => (
+        <img key={value.id} src={value.avatar} alt="Italian Trulli" />
       ))}
-      <h1>login Status: {props.loginStatus.toString()}</h1>
+      <h1>
+        login Status:
+        {loginStatus.toString()}
+      </h1>
       <h1>try to open your console, and you will see all the REQUEST that called.</h1>
     </div>
-  )
+  );
 }
 const mapStateToProps = (state) => ({
   loginStatus: state.request.loginStatus,

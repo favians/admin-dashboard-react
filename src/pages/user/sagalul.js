@@ -1,10 +1,10 @@
-import Sagalul from 'components/user/SagaLul'
-import styles from 'resources/styles/Home.module.css'
+import Sagalul from 'components/user/SagaLul';
+import styles from 'resources/styles/Home.module.css';
 
-export default function SagaLul() {
+export default function SagaLulUser() {
   return (
     <div className={styles.container}>
-      <Sagalul title="sagalul page only" color="yellow"/>
+      <Sagalul title="sagalul page only" color="yellow" />
     </div>
-  )
+  );
 }

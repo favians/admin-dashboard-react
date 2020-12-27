@@ -1,23 +1,24 @@
 import axios from 'axios';
+import handleError from 'helpers/handleErrors/HandleError';
 
 const httpRequestMethod = {
-  GET : 'GET',
+  GET: 'GET',
   POST: 'POST',
   PUT: 'PUT',
   DELETE: 'DELETE',
-}
+};
 
 const httpRequest = (method, path, params, data) => {
   const options = {
-    method: method,
+    method,
     url: process.env.API_BASE_URL + path,
-    data: data,
-    params: params,
+    data,
+    params,
     headers: {
-      'Authorization': 'Bearer ' + localStorage.getItem("token"),
-      'Content-Type': 'application/json'
+      Authorization: `Bearer ${localStorage.getItem('token')}`,
+      'Content-Type': 'application/json',
     },
-  }
+  };
   return new Promise((resolve, reject) => {
     axios(options)
       .then((response) => resolve(response))
