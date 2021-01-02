@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { decrementCounter, incrementCounter } from 'reduxjs/actions/counterActions';
 
 function ReduxExample(props) {
-  const { count, decrementCounterFromRedux, incrementCounterFromRedux } = props;
+  const { count } = props;
 
   return (
     <div className={styles.container}>
@@ -12,8 +12,8 @@ function ReduxExample(props) {
         {count}
       </h1>
       <form>
-        <button type="button" onClick={() => (incrementCounterFromRedux())}>Increment</button>
-        <button type="button" onClick={() => (decrementCounterFromRedux())}>Decrement</button>
+        <button type="button" onClick={() => props.incrementCounterFromRedux()}>Increment</button>
+        <button type="button" onClick={() => props.decrementCounterFromRedux()}>Decrement</button>
       </form>
       <h1>try to open your console, and you will see all the REDUX that has been set before.</h1>
     </div>

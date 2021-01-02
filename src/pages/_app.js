@@ -4,6 +4,7 @@ import { Provider } from 'react-redux';
 import store from 'reduxjs';
 import { createWrapper } from 'next-redux-wrapper';
 import Head from 'next/head';
+import DefaultLayout from 'layout/Default';
 
 class MyApp extends App {
   static async getInitialProps({ Component, ctx }) {
@@ -16,6 +17,7 @@ class MyApp extends App {
   render() {
     // pageProps that were returned  from 'getInitialProps' are stored in the props i.e. pageprops
     const { Component, pageProps } = this.props;
+    const Layout = Component.Layout || DefaultLayout;
 
     return (
       <>
@@ -23,7 +25,9 @@ class MyApp extends App {
           <title>Boiler React Starter</title>
         </Head>
         <Provider store={store}>
-          <Component {...pageProps} />
+          <Layout>
+            <Component {...pageProps} />
+          </Layout>
         </Provider>
       </>
     );

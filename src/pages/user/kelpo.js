@@ -8,6 +8,8 @@ export default function KelpoUser() {
       <Image
         src="/images/bayi-gondrong.jpg"
         alt="Picture of the author"
+        width={500}
+        height={500}
       />
       <Kelpo title="kelpo page only" color="red" />
     </div>

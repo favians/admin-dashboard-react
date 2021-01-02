@@ -4,10 +4,10 @@ import { req } from 'reduxjs/actions/requestActions';
 import { connect } from 'react-redux';
 
 function request(props) {
-  const { loginStatus, imagesData, DoRequest } = props;
+  const { loginStatus, imagesData } = props;
 
   useEffect(async () => {
-    DoRequest();
+    props.DoRequest();
   }, []);
 
   return (
@@ -23,6 +23,7 @@ function request(props) {
     </div>
   );
 }
+
 const mapStateToProps = (state) => ({
   loginStatus: state.request.loginStatus,
   imagesData: state.request.imagesData,

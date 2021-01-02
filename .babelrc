@@ -12,7 +12,8 @@
                     "@pages": "./src/pages",
                     "@reduxjs": "./src/reduxjs",
                     "@resources": "./src/resources",
-                    "@utils": "./src/utils"
+                    "@utils": "./src/utils",
+                    "@layout": "./src/layout"
             }
             }
         ]
