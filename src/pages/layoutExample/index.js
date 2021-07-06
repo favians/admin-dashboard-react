@@ -1,5 +1,4 @@
 import styles from 'resources/styles/Home.module.css';
-import Menu from 'layout/Menu';
 
 const LayoutExample = () => (
   <div className={styles.container}>
@@ -7,6 +6,5 @@ const LayoutExample = () => (
   </div>
 );
 
-LayoutExample.Layout = Menu;
 
 export default LayoutExample;
