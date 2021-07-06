@@ -6,12 +6,12 @@ import thunk from 'redux-thunk';
 
 const loggingMiddleware = (store) => (next) => (action) => {
   // we will catch every action here, regardless of the type
- 
+
   // log the current action
-  console.log('dispatching', action)
+  console.log('dispatching', action);
   // continue execution of the action
-  next(action)
-}
+  next(action);
+};
 
 const rootReducer = combineReducers({
   counter: counterReducer,

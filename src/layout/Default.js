@@ -1,33 +1,56 @@
 import React, { memo } from 'react';
 import NavigationDrawer from 'components/navigationDrawer/navigationDrawer';
 
-const DefaultLayout = ({ children }) => (
-    <NavigationDrawer>
-              <Typography paragraph>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-          ut labore et dolore magna aliqua. Rhoncus dolor purus non enim praesent elementum
-          facilisis leo vel. Risus at ultrices mi tempus imperdiet. Semper risus in hendrerit
-          gravida rutrum quisque non tellus. Convallis convallis tellus id interdum velit laoreet id
-          donec ultrices. Odio morbi quis commodo odio aenean sed adipiscing. Amet nisl suscipit
-          adipiscing bibendum est ultricies integer quis. Cursus euismod quis viverra nibh cras.
-          Metus vulputate eu scelerisque felis imperdiet proin fermentum leo. Mauris commodo quis
-          imperdiet massa tincidunt. Cras tincidunt lobortis feugiat vivamus at augue. At augue eget
-          arcu dictum varius duis at consectetur lorem. Velit sed ullamcorper morbi tincidunt. Lorem
-          donec massa sapien faucibus et molestie ac.
-        </Typography>
-        <Typography paragraph>
-          Consequat mauris nunc congue nisi vitae suscipit. Fringilla est ullamcorper eget nulla
-          facilisi etiam dignissim diam. Pulvinar elementum integer enim neque volutpat ac
-          tincidunt. Ornare suspendisse sed nisi lacus sed viverra tellus. Purus sit amet volutpat
-          consequat mauris. Elementum eu facilisis sed odio morbi. Euismod lacinia at quis risus sed
-          vulputate odio. Morbi tincidunt ornare massa eget egestas purus viverra accumsan in. In
-          hendrerit gravida rutrum quisque non tellus orci ac. Pellentesque nec nam aliquam sem et
-          tortor. Habitant morbi tristique senectus et. Adipiscing elit duis tristique sollicitudin
-          nibh sit. Ornare aenean euismod elementum nisi quis eleifend. Commodo viverra maecenas
-          accumsan lacus vel facilisis. Nulla posuere sollicitudin aliquam ultrices sagittis orci a.
-        </Typography>
+import InboxIcon from '@material-ui/icons/MoveToInbox';
+import ApartmentIcon from '@material-ui/icons/Apartment';
+import AttachMoneyIcon from '@material-ui/icons/AttachMoney';
+import BallotIcon from '@material-ui/icons/Ballot';
+import CachedIcon from '@material-ui/icons/Cached';
+import ChildCareIcon from '@material-ui/icons/ChildCare';
 
-    </NavigationDrawer>
+const title = 'Admin Dashboard';
+const menu = [
+  {
+    name: 'Home',
+    icon: <InboxIcon />,
+    to: '/',
+  },
+  {
+    name: 'Dot Env',
+    icon: <ApartmentIcon />,
+    to: '/dotenv/dotenv',
+  },
+  {
+    name: 'Layout Example',
+    icon: <BallotIcon />,
+    to: '/layoutExample',
+  },
+  {
+    name: 'Redux Example',
+    icon: <AttachMoneyIcon />,
+    to: '/reduxExample',
+  },
+  {
+    name: 'Request',
+    icon: <CachedIcon />,
+    to: '/request',
+  },
+  {
+    name: 'User Sagalul',
+    icon: <ChildCareIcon />,
+    to: '/user/sagalul',
+  },
+  {
+    name: 'User Kelpo',
+    icon: <ChildCareIcon />,
+    to: '/user/kelpo',
+  },
+];
+
+const DefaultLayout = ({ children }) => (
+  <NavigationDrawer title={title} menu={menu}>
+    { children }
+  </NavigationDrawer>
 );
 
 export default memo(DefaultLayout);

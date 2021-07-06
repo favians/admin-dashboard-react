@@ -6,5 +6,4 @@ const LayoutExample = () => (
   </div>
 );
 
-
 export default LayoutExample;
