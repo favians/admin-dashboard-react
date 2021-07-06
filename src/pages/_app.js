@@ -5,6 +5,7 @@ import store from 'reduxjs';
 import { createWrapper } from 'next-redux-wrapper';
 import Head from 'next/head';
 import DefaultLayout from 'layout/Default';
+import 'resources/styles/global.css';
 
 class MyApp extends App {
   componentDidMount() {

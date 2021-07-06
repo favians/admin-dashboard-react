@@ -17,7 +17,7 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 
-const drawerWidth = 240;
+const drawerWidth = 230;
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -70,8 +70,8 @@ function NavigationDrawer(props) {
       <Divider />
       <List>
         {menu.map((value, index) => (
-          <Link href={value.to}>
-            <ListItem button key={index}>
+          <Link href={value.to} key={value.name}>
+            <ListItem button>
               <ListItemIcon>{value.icon}</ListItemIcon>
               <ListItemText primary={value.name} />
             </ListItem>
@@ -144,7 +144,7 @@ function NavigationDrawer(props) {
 NavigationDrawer.propTypes = {
   window: PropTypes.func,
   title: PropTypes.string.isRequired,
-  menu: PropTypes.object.isRequired,
+  menu: PropTypes.array.isRequired,
 };
 
 export default NavigationDrawer;
