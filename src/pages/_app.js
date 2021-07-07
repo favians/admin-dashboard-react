@@ -5,6 +5,8 @@ import store from 'reduxjs';
 import { createWrapper } from 'next-redux-wrapper';
 import Head from 'next/head';
 import DefaultLayout from 'layout/Default';
+import { ThemeProvider } from '@material-ui/core/styles';
+import theme from 'resources/theme';
 import 'resources/styles/global.css';
 
 class MyApp extends App {
@@ -34,9 +36,11 @@ class MyApp extends App {
           <title>Boiler React Starter</title>
         </Head>
         <Provider store={store}>
+        <ThemeProvider theme={theme}>
           <Layout>
             <Component {...pageProps} />
           </Layout>
+          </ThemeProvider>
         </Provider>
       </>
     );
