@@ -17,6 +17,12 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 
+NavigationDrawer.propTypes = {
+  window: PropTypes.func,
+  title: PropTypes.string.isRequired,
+  menu: PropTypes.array.isRequired,
+};
+
 const drawerWidth = 230;
 
 const useStyles = makeStyles((theme) => ({
@@ -41,7 +47,6 @@ const useStyles = makeStyles((theme) => ({
       display: 'none',
     },
   },
-  // necessary for content to be below app bar
   toolbar: theme.mixins.toolbar,
   drawerPaper: {
     width: drawerWidth,
@@ -70,7 +75,7 @@ function NavigationDrawer(props) {
       <Divider />
       <List>
         {menu.map((value, index) => (
-          <Link href={value.to} key={value.name}>
+          <Link href={value.to} key={index}>
             <ListItem button>
               <ListItemIcon>{value.icon}</ListItemIcon>
               <ListItemText primary={value.name} />
@@ -103,7 +108,6 @@ function NavigationDrawer(props) {
         </Toolbar>
       </AppBar>
       <nav className={classes.drawer} aria-label="mailbox folders">
-        {/* The implementation can be swapped with js to avoid SEO duplication of links. */}
         <Hidden smUp implementation="css">
           <Drawer
             container={container}
@@ -115,7 +119,7 @@ function NavigationDrawer(props) {
               paper: classes.drawerPaper,
             }}
             ModalProps={{
-              keepMounted: true, // Better open performance on mobile.
+              keepMounted: true,
             }}
           >
             {drawer}
@@ -140,11 +144,5 @@ function NavigationDrawer(props) {
     </div>
   );
 }
-
-NavigationDrawer.propTypes = {
-  window: PropTypes.func,
-  title: PropTypes.string.isRequired,
-  menu: PropTypes.array.isRequired,
-};
 
 export default NavigationDrawer;
